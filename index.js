@@ -270,7 +270,7 @@ MediaRecorder.isTypeSupported = mimeType => {
  *   showWarning('Audio recording is not supported in this browser')
  * }
  */
-MediaRecorder.notSupported = !navigator.mediaDevices || !AudioContext
+MediaRecorder.notSupported = !navigator || !navigator.mediaDevices || !AudioContext;
 
 /**
  * Converts RAW audio buffer to compressed audio files.
