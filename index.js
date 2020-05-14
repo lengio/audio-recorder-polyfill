@@ -1,6 +1,10 @@
 let waveEncoder = require('./wave-encoder')
 
-let AudioContext = window.AudioContext || window.webkitAudioContext
+// Set `AudioContext`.
+let AudioContext;
+if (typeof window !== "undefined") {
+  AudioContext = window.AudioContext || window.webkitAudioContext;
+}
 
 function createWorker (fn) {
   let js = fn
